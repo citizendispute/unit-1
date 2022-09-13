@@ -2,31 +2,33 @@
 //  ViewController.swift
 //  Flix
 //
-//  Created by Giovanna Yuen on 9/6/22.
+//  Created by Giovanna Yuen on 9/12/22.
 //
 
 import UIKit
 import AlamofireImage
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    
+    //UI interface for table view 
     @IBOutlet weak var tableView: UITableView!
     
     var movies = [[String: Any]]()
+    //var movie: [String: Any]!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        //calls tableView functions
         tableView.dataSource = self
         tableView.delegate = self
         
+        // Do any additional setup after loading the view.
         
         let url = URL(string: "https://api.themoviedb.org/3/movie/now_playing?api_key=a07e22bc18f5cb106bfe4cc1f83ad8ed")!
         let request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 10)
         let session = URLSession(configuration: .default, delegate: nil, delegateQueue: OperationQueue.main)
         let task = session.dataTask(with: request) { (data, response, error) in
-             
+             // This will run when the network request returns
              if let error = error {
                     print(error.localizedDescription)
              } else if let data = data {
@@ -40,7 +42,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         task.resume()
     }
     
-    
+    //Give # of table of movies
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return movies.count
         
@@ -62,6 +64,18 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         cell.posterView.af_setImage(withURL: posterURL!)
         return cell
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?){
+        print("Loading screen...")
+        let cell = sender as! UITableViewCell
+        let indexPath = tableView.indexPath(for: cell)!
+        let movie = movies[indexPath.row]
+        
+        let detailsViewController = segue.destination as! MoviesDetailViewController
+        detailsViewController.movie = movie
+        tableView.deselectRow(at: indexPath, animated: true)
+        
     }
 
 

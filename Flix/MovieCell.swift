@@ -2,7 +2,7 @@
 //  MovieCell.swift
 //  Flix
 //
-//  Created by Giovanna Yuen on 9/6/22.
+//  Created by Giovanna Yuen on 9/12/22.
 //
 
 import UIKit

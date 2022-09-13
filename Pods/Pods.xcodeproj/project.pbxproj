@@ -47,6 +47,7 @@
 		A922CBE5629EE587C17F2FC57C3C419D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD0CE05D5D076B1B5190EE5DF97FD54E /* Foundation.framework */; };
 		AABEE7A05F3EC4A45612EC0F971B833E /* Pods-Flix-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E0B1E9080E334F31E6EA2DD77ABF1CC /* Pods-Flix-dummy.m */; };
 		AB7C39118274F70082DAD7B5CD7ACB10 /* Pods-FlixTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 97A0AB5D2E77AF74E0ADF5607F7A0D86 /* Pods-FlixTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B2D0109C28D0181B004CC33C /* AlamofireImage in Frameworks */ = {isa = PBXBuildFile; productRef = B2D0109B28D0181B004CC33C /* AlamofireImage */; };
 		B3658C29BBDE1033F6269A92E612CB30 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF487BBD46B3006511DA3627DE44D5D3 /* Request.swift */; };
 		B5CD9359FAD77ABBBB72140E958DAB2D /* Pods-Flix-FlixUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2870DF35EE52D7B4303BB47BF862B8F5 /* Pods-Flix-FlixUITests-dummy.m */; };
 		B704B198B9B520D449260877E300D821 /* ServerTrustEvaluation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7352F62B3692253AED40B6A26C771AF /* ServerTrustEvaluation.swift */; };
@@ -179,7 +180,7 @@
 		98FE9287B99B7690C8FF2639ADA93358 /* Pods-Flix-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Flix-umbrella.h"; sourceTree = "<group>"; };
 		9B9CCA17F9E7E6C605DF9F67489C687F /* Alamofire.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Alamofire.modulemap; sourceTree = "<group>"; };
 		9BFDC43429D18B0E19D2678ED471170E /* UIImageView+AlamofireImage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIImageView+AlamofireImage.swift"; path = "Source/UIImageView+AlamofireImage.swift"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A1D8E1BE0F77EDA2ED4079B663121386 /* ResponseSerialization.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ResponseSerialization.swift; path = Source/ResponseSerialization.swift; sourceTree = "<group>"; };
 		ACDAE96981968F2CB50BECCC93D1DB06 /* Pods-Flix-FlixUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Flix-FlixUITests.release.xcconfig"; sourceTree = "<group>"; };
 		B3FFB100D8D9CF4BED23251B6F447C2E /* Pods-Flix.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Flix.debug.xcconfig"; sourceTree = "<group>"; };
@@ -218,6 +219,7 @@
 			files = (
 				7B068137A8925891446203B5D3D6A4ED /* CFNetwork.framework in Frameworks */,
 				0F4037DBF307AC8058BD0A3D35C7E7E9 /* Foundation.framework in Frameworks */,
+				B2D0109C28D0181B004CC33C /* AlamofireImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -364,7 +366,6 @@
 				C4C41AC1D2B69BFDE3BEF3354C0BFBDF /* Validation.swift */,
 				F1168143CD14105FB88D2083DF83E512 /* Support Files */,
 			);
-			name = Alamofire;
 			path = Alamofire;
 			sourceTree = "<group>";
 		};
@@ -427,7 +428,6 @@
 				9BFDC43429D18B0E19D2678ED471170E /* UIImageView+AlamofireImage.swift */,
 				AAA4A9A9C0D42409D004EA1CDEBCF623 /* Support Files */,
 			);
-			name = AlamofireImage;
 			path = AlamofireImage;
 			sourceTree = "<group>";
 		};
@@ -596,6 +596,9 @@
 			dependencies = (
 			);
 			name = Alamofire;
+			packageProductDependencies = (
+				B2D0109B28D0181B004CC33C /* AlamofireImage */,
+			);
 			productName = Alamofire;
 			productReference = 5D797E9A5C5782CE845840781FA1CC81 /* Alamofire */;
 			productType = "com.apple.product-type.framework";
@@ -618,6 +621,9 @@
 				en,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			packageReferences = (
+				B2D0109A28D0181B004CC33C /* XCRemoteSwiftPackageReference "AlamofireImage" */,
+			);
 			productRefGroup = F816AB4080E8ED56BDD211FA0F1647F5 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -1350,6 +1356,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B2D0109A28D0181B004CC33C /* XCRemoteSwiftPackageReference "AlamofireImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/AlamofireImage.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B2D0109B28D0181B004CC33C /* AlamofireImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B2D0109A28D0181B004CC33C /* XCRemoteSwiftPackageReference "AlamofireImage" */;
+			productName = AlamofireImage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 }
